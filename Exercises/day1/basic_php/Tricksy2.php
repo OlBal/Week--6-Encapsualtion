@@ -6,15 +6,17 @@ require __DIR__ . "/vendor/autoload.php";
 
 
 
-for ($i = 1; $i <= 50; $i += 1){
-    
+for ($i = 1; $i < 117; $i += 1){
 
-    if ($i %2 !== 0){
+    if ($i %3 === 0 || $i %7 === 0){
 
        $total += $i;
+       
        dump ($total);
+
     }
 
  
+
 
 }
