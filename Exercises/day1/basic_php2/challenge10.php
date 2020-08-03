@@ -10,12 +10,11 @@ require __DIR__ . "/vendor/autoload.php";
 function average ($arr){
 
     foreach ($arr as $value){
+
       $newValue += $value;
     
 
-     dump($newValue);
-
-    //  return $total /count($arr);
+      dump($newValue);
 
 
     }
