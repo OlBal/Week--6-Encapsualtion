@@ -10,9 +10,10 @@ require __DIR__ . "/vendor/autoload.php";
 
 
 function squares($arr){
+    $newArr = [];
      foreach ($arr as $value){
-       $newArr[]=$value*$value;
-     };     
+        $newArr[] = $value * $value;
+     }     
      return $newArr;
 };
 

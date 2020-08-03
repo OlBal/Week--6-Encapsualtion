@@ -7,15 +7,11 @@ require __DIR__ . "/vendor/autoload.php";
 //Create a function, oap, that takes an associative array with an age property. It should return true if the age property is greater than 65 otherwise it should return false.
 
 
-function oap($oap) {
+function oap($age) {
     
-    if ($oap["age"] > 65) {
+   return  $age["age"] > 65;
 
-       return true;
-
-    }else return false;
-
-};
+}
 
 
 

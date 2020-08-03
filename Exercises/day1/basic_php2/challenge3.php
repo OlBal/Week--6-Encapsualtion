@@ -6,13 +6,8 @@ require __DIR__ . "/vendor/autoload.php";
 
 function sameName ($person1, $person2) {
     
-    if ($person1["name"] !== $person2["name"]) {
-
-       return false;
-
-    }else return true;
-
-};
+  ($person1["name"] !== $person2["name"]);
+}
 
 $a = [ "name" => "Alice", "age" => 52 ];
 $b = [ "name" => "Bob", "age" => 34 ];

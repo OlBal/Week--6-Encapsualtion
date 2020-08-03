@@ -2,27 +2,34 @@
 
 require __DIR__ . "/vendor/autoload.php";
 
-//Create a function, squares, that takes an array of numbers as an argument. Return a new array containing the square of each number.
+//Create a function, average, that takes an array of numbers as an argument. Return the average value of all the numbers.
 
 //Try it using foreach
-//Try it using collect() (you'll need the illuminate/support package)
+//Try it using collect()
+
+function average ($arr){
+
+    foreach ($arr as $value){
+      $newValue += $value;
+    
+
+     dump($newValue);
+
+    //  return $total /count($arr);
 
 
+    }
 
-function squares($arr){
-     foreach ($arr as $value){
-       $newArr = [$value*$arr] ;
-     };
-     dump($newArr)
-
-};
-
+}
 
 
 
 
 dump(
-squares([2, 3, 4]), // [4, 9, 16]
-squares([2, 3, 4, 5, 6]), // [4, 9, 16, 25, 36]
+average([2, 3, 4, 5, 6]), // 4
+average([2, 3]), // 2.5
+average([10, 30]), // 20
+average([-4, -8, -9]), // -7
 );
+
 
