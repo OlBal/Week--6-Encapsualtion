@@ -11,8 +11,9 @@ require __DIR__ . "/vendor/autoload.php";
 function validEmail($str){
 
 
-$email = preg_replace("/(^*\s*\s$)/",$str);
-return $email;
+$email = preg_replace("/(\s*\s*)/",$str);
+
+return preg_match("//", $email);
 
 }
 
