@@ -1,8 +1,33 @@
-?php
+<?php
 
 require __DIR__ . "/vendor/autoload.php";
 
 // Create a class that represents a phone
+
+class Phone
+{
+
+    private $make;
+    private $model;
+
+    public function __construct($make, $model)
+    {
+        $this->make = $make;
+        $this->model =  $model;
+    }
+    public function make()
+    {
+        return $this->make;
+    }
+
+    public function model()
+    {
+        return $this->model;
+    }
+
+}
+
+
 
 // create three phones
 $iPhone = new Phone("Apple", "iPhone XS");
