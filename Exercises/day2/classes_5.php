@@ -3,55 +3,53 @@
 require __DIR__ . "/vendor/autoload.php";
 
 
-//Create a class that represents an address - use different properties for each part of the address. It should have a fullAddress method, which will return the full address as a nicely formatted string.
+//Create a class that lets you do things with a string.
 
-
-class Address
+class Stringy
 {
-    private $street;
-    private $town;
-    private $postcode;
-
-    public function __construct($street, $town, $postcode)
+    private $string;
+    
+    public function __construct($string)
     {
-        $this->street= $street;
-        $this->town = $town;
-        $this->postcode = $postcode;
+        $this->$string = $string;
     }
     
-    public function fullAddress()
+    public function lower()
     {
-        return $this->address = "{$this->street}, {$this->town}, {$this->postcode}";
+        return strtolower($this->string);
     }
 
-    public function setStreet($newStreet)
+    public function upper()
     {
-        return $this->street = $newStreet;
+        return strtoupper($this->string);
     }
 
-    public function setPostcode($newPostcode)
+    public function append($appended)
     {
-        return $this->postcode = $newPostcode;
+        return $this->string.$appended;
+        
     }
-
-    public function setTown($newTown)
+    public function repeat($num)
     {
-        return $this->town = $newTown;
+        return  str_repeat($this->newString);
     }
+    
 }
 
 
 
 
-$address = new Address("1 Made Up Street", "BS4 8TR", "Bristol");
 
-// logs the full address neatly
-dump($address->fullAddress()); // "1 Made Up Street, Bristol, BS4 8TR"
+$string = new Stringy("Na");
 
-// can update the street, postcode, and town
-$address->setStreet("12 Cantelope Way");
-$address->setPostcode("SW5 8RQ");
-$address->setTown("Swansea");
+// it can lowercase a string
+dump($string->lower()); // "na"
 
-// logs the new full address neatly
-dump($address->fullAddress()); // "12 Cantelope Way, Swansea, SW5 8RQ"
+// it can uppercase a string
+dump($string->upper()); // "NA"
+
+// it can concatenate
+dump($string->append("blah")); // "Nablah"
+
+// it can repeat a string
+dump($string->repeat(5)); // "NaNaNaNaNa"

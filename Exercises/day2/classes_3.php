@@ -12,11 +12,10 @@ class Car
     private $numPlate;
     private $mileage = 0;
 
-    public function __construct($make , $numPlate)
+    public function __construct($make, $numPlate)
     {
         $this->make = $make;
         $this->numPlate = $numPlate;
-      
     }
 
     public function getNumberPlate()
@@ -34,10 +33,10 @@ class Car
         return $this->mileage;
     }
 
-    public function addJourney($journey){
-
+    public function addJourney($journey)
+    {
         $this->mileage += $journey;
-        return $this ->mileage;
+        
     }
 
 }
