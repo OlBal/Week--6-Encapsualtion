@@ -8,7 +8,7 @@ require __DIR__ . "/vendor/autoload.php";
 
 function phoneNumber($str){
 
-    return preg_match("/[0-9-][^a-z]/",$str) === 1;
+    return preg_match("/^[0-9-]$[^a-z]/",$str) === 1;
 }
 
 

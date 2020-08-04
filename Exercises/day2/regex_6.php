@@ -7,7 +7,7 @@ require __DIR__ . "/vendor/autoload.php";
 
 function threeOs($str){
 
-    return preg_match("/ooo+/i", $str) === 1;
+    return preg_match("/o{3}+/i", $str) === 1;
 
 }
 
