@@ -138,7 +138,32 @@ dump($potato->hasGrown()); // true
 
 echo "\nQuestion 4:\n";
 
-use App\Library\Book;
+use App\Library;
+
+class Book
+{
+
+  private $title;
+  private $pageNum;
+
+  public function __construct()
+  {
+  $this->title = $title;
+  $this->pageNum = $pageNum;
+  }
+
+  public function read()
+  {
+
+  }
+
+  public function currentPage()
+  {
+
+  }
+
+}
+
 
 
 $book = new Book("Zero: The Biography of a Dangerous Idea", 256);
