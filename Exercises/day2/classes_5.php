@@ -31,7 +31,7 @@ class Stringy
     }
     public function repeat($num)
     {
-        return  str_repeat($this->newString);
+        return  str_repeat($this->string);
     }
     
 }
