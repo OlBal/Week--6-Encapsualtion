@@ -21,22 +21,26 @@ class Address
     
     public function fullAddress()
     {
-        return $this->address = "{$this->street}, {$this->town}, {$this->postcode}";
-    }
+         $this->address = "{$this->street}, {$this->town}, {$this->postcode}";
+         return $this;
+    }   
 
     public function setStreet($newStreet)
     {
-        return $this->street = $newStreet;
+         $this->street = $newStreet;
+         return $this;
     }
 
     public function setPostcode($newPostcode)
     {
-        return $this->postcode = $newPostcode;
+         $this->postcode = $newPostcode;
+         return $this;
     }
 
     public function setTown($newTown)
     {
-        return $this->town = $newTown;
+         $this->town = $newTown;
+         return $this;
     }
 }
 
@@ -45,13 +49,10 @@ class Address
 
 $address = new Address("1 Made Up Street", "BS4 8TR", "Bristol");
 
-// logs the full address neatly
 dump($address->fullAddress()); // "1 Made Up Street, Bristol, BS4 8TR"
 
-// can update the street, postcode, and town
-$address->setStreet("12 Cantelope Way");
-$address->setPostcode("SW5 8RQ");
-$address->setTown("Swansea");
+$address->setStreet("12 Cantelope Way")
+        ->setPostcode("SW5 8RQ")
+        ->setTown("Swansea");
 
-// logs the new full address neatly
 dump($address->fullAddress()); // "12 Cantelope Way, Swansea, SW5 8RQ"
