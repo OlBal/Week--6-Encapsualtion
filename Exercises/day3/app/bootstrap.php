@@ -3,8 +3,8 @@ namespace App;
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-spl_autoload_register(function ($app) {
- require_once __DIR__ . "classes/{$app}.php";
+spl_autoload_register(function ($class) {
+ require_once __DIR__ . "classes/{$class}.php";
 });
 
 
@@ -35,7 +35,6 @@ dump($sayHi->hello("Horse")); // "Hello Horse"
 
 
 
-//~~~~* Challenge II *~~~~~\\
 
 
 
@@ -78,39 +77,12 @@ dump($sayHi->hello("Horse")); // "Hello Horse"
 // dump($person1->sayHelloTo($person2)); // "Hello Wes Anderson"
 // dump($person2->sayHelloTo($person1)); // "Hello Lynne Ramsay"
 
+//Challenge III
 
-//~~~~* Challenge III *~~~~~\\
-
-
-//Create a class Potato in the App\Stuff\Things namespace. It should have a water() and hasGrown() method. hasGrown() should return false until the Potato has been watered five or more times.
 
 echo "\nQuestion 3:\n";
 
-use App\Potato;
-
-class Potato
-{
-
-  private $waterTotal = 0; 
-
-  public function water()
-  {
-    $this->agua = $this->waterTotal+=1;
-    return $this;
-  }
-
-  public function hasGrown()
-  {
-    if($this->waterTotal<5)
-    {
-      return false;
-    } else return true;
-  }
-
-
-};
-
-
+use App\Stuff\Things\Potato;
 
 $potato = new Potato();
 $potato->water()->water();
@@ -128,50 +100,35 @@ dump($potato->hasGrown()); // true
 
 
 
+//Challenge IV
 
-
-
-
-//~~~~* Challenge IV *~~~~~\\
-
-//Create a class Book in the App\Library namespace. It should take a title and its number of pages in the constructor. It should have a read() method, which takes a number of pages that have been read. It should also have a currentPage() page method which tells you which page you're currently on.
 
 echo "\nQuestion 4:\n";
 
-use App\Library;
-
-class Book
-{
-
-  private $title;
-  private $pageNum;
-
-  public function __construct()
-  {
-  $this->title = $title;
-  $this->pageNum = $pageNum;
-  }
-
-  public function read()
-  {
-
-  }
-
-  public function currentPage()
-  {
-
-  }
-
-}
-
-
+use App\Library\Book;
 
 $book = new Book("Zero: The Biography of a Dangerous Idea", 256);
 
 // read 12 pages
 $book->read(12);
-dump($book->currentPage()); // 13 - start on page 1
+dump($book->currentPage()); // 13
 
 // read another 25 pages
 $book->read(25);
 dump($book->currentPage()); // 38
+
+
+
+//Challenge V
+
+
+echo "\nQuestion 5:\n";
+
+use App\Library\Shelf;
+
+$shelf = new Shelf();
+$shelf->addBook($book);
+$shelf->addBook(new Book("The Catcher in the Rye", 277));
+$shelf->addBook(new Book("Stamped from the Beginning", 582));
+
+dump($shelf->titles()); // ["Zero: The Biography of a Dangerous Idea", "The Catcher in the Rye", "Stamped from the Beginning"]
