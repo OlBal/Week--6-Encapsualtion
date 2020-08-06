@@ -1,50 +1,26 @@
 <?php
 
-require __DIR__ . "/vendor/autoload.php";
-
-
-//Create a class that represents a light switch
-
+declare(strict_types=1);
 
 class LightSwitch
 {
-    private $isOn;
-    private $turnOn;
-    private $turnOff;
+    private $on = false;
 
-    public function __construct($isOn,$turnOn,$turnOff)
+    public function turnOn() : bool
     {
-        $this->isOn = $isOn;
-       $this->turnOn = $turnOn;
-       $this->turnOff = $turnOff;
+        $this->on = true;
     }
 
-    public function isOn()
+    public function turnOff() : bool
     {
-      
+        $this->on = false;
     }
 
-    public function turnOn()
+    public function isOn() : bool
     {
-        if($this->isOn){
-            return true;
-        }
-
+        return $this->on;
     }
-
-    public function turnOff()
-    {
-            if($this->turnOff){
-            return $this->turnOff(false);
-            }
-    }
-
-
 }
-
-
-
-
 
 $lightSwitch = new LightSwitch();
 
@@ -58,4 +34,3 @@ dump($lightSwitch->isOn()); // true
 // you can turn it off
 $lightSwitch->turnOff();
 dump($lightSwitch->isOn()); // false
-

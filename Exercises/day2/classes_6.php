@@ -1,50 +1,19 @@
 <?php
-
 require __DIR__ . "/vendor/autoload.php";
 
-
-//Create a class that validates emails and postcodes.
-
-
-$postcode = preg_match("//", $validator);
-$email = preg_match("/!filter_var($email, FILTER_VALIDATE_EMAIL/"));
-
-class Validate
+class Validator
 {
-
-    private $validator;
-
-    public function __construct ($validator)
+    public function email(string $email) : bool
     {
-        $this->validator;
+        // check if it's non-spaces
+        return preg_match("/^\S+@\S+\.\S+$/", $email) === 1;
     }
-    
-    public function validator()
+
+    public function postcode(string $postcode) : bool
     {
-
-        if($postcode === 1||$email === 1){
-            return true;
-        }else return false;
-
+        return preg_match("/^[A-Z][A-Z]?[0-9][0-9]?[0-9A-Z]? [0-9][A-Z][A-Z]$/", $postcode) === 1;
     }
 }
-
-//You might want to use Regexr to test any regexes. Make sure you set it to use the PCRE engine.
-
-// Here's the list of postcode test data:
-
-// BS4 3UH
-// S10 4GR
-// BS14 9DI
-// SW1A 1AA
-// 12B DI9
-// EST4 DD29
-// blah blah BS5 8RJ blah blah
-
-
-
-
-
 
 $validator = new Validator();
 
