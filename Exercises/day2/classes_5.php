@@ -1,44 +1,41 @@
 <?php
-
 require __DIR__ . "/vendor/autoload.php";
-
-
-//Create a class that lets you do things with a string.
 
 class Stringy
 {
     private $string;
-    
+
     public function __construct($string)
     {
-        $this->$string = $string;
+        $this->string = $string;
     }
-    
-    public function lower()
+
+    public function lower() : string
     {
         return strtolower($this->string);
     }
 
-    public function upper()
+    public function upper() : string
     {
         return strtoupper($this->string);
     }
 
-    public function append($appended)
+    public function append(string $string) : string
     {
-        return $this->string.$appended;
-        
+        return $this->string . $string;
     }
-    public function repeat($num)
+
+    public function repeat(float $times) : string
     {
-        return  str_repeat($this->string);
+        $output = "";
+
+        for ($i = 0; $i < $times; $i += 1) {
+            $output .= $this->string;
+        }
+
+        return $output;
     }
-    
 }
-
-
-
-
 
 $string = new Stringy("Na");
 

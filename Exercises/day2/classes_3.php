@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 require __DIR__ . "/vendor/autoload.php";
 
 
@@ -18,31 +18,28 @@ class Car
         $this->numPlate = $numPlate;
     }
 
-    public function getNumberPlate()
+    public function getNumberPlate() : string
     {
         return $this->numPlate;
     }
 
-    public function getMake()
+    public function getMake() : string
     {
         return $this->make;
     }
 
-    public function getMileage()
+    public function getMileage() : float
     {
         return $this->mileage;
     }
 
-    public function addJourney($journey)
+    public function addJourney(float $journey) : Car
     {
         $this->mileage += $journey;
         return $this;
     }
 
 }
-
-
-
 
 // you pass in a make and number plate
 $car = new Car("Ford", "XY11 4TY");
@@ -54,6 +51,6 @@ dump($car->getMileage()); // 0
 
 // you can add journey
 dump($car->addJourney(100)->getMileage());
-dump($car->make);
+dump($car->getMake());
 $car->addJourney(200);
 dump($car->getMileage()); // 300
