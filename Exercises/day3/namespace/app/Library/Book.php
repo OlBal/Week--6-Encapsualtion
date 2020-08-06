@@ -21,12 +21,13 @@ class Book
   $this->pages = $pages;
   }
 
-  public function read($num)
+  public function read(float $num) : int
   {
     return $this->pagesRead += $num;
+
   }
 
-  public function currentPage()
+  public function currentPage() : int
   {
     return $this->pagesRead;
   }
@@ -39,30 +40,30 @@ class Book
 //Create a Shelf class. It should have an addBook() method which gets passed a Book. It should also have a titles() method, which lists the titles of all the books on the shelf.
 
 
-class Shelf
-{
+// class Shelf
+// {
 
-  private $shelf = [];
-  private $titles = [];
+//   private $shelf = [];
+//   private $titles = [];
 
 
-  public function __construct()
-  {
-    $this->books = $titles;
-  }
+//   public function __construct()
+//   {
+//     $this->books = $titles;
+//   }
 
-  public function addBook($book)
-  {
-   return $this->shelf[] = $book;
-  }
+//   public function addBook($book)
+//   {
+//    return $this->shelf[] = $book;
+//   }
 
-  public function titles()
-  {
+//   public function titles()
+//   {
    
-   $this->titles[""] = array_map($this->shelf);
-  return $this->titles;
-  }
+//    $this->titles[""] = array_map($this->shelf);
+//   return $this->titles;
+//   }
 
-}
+// }
 
 

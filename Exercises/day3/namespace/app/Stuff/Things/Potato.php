@@ -13,13 +13,13 @@ class Potato
 
   private $waterTotal = 0; 
 
-  public function water()
+  public function water() : Potato
   {
     $this->agua = $this->waterTotal+=1;
     return $this;
   }
 
-  public function hasGrown()
+  public function hasGrown() : bool
   {
     return $this->waterTotal>=5;
    

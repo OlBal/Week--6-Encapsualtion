@@ -20,7 +20,7 @@ dump($sayHi->hello("Horse")); // "Hello Horse"
 
 
 
-//Challenge II
+// //Challenge II
 
 
 echo "\nQuestion 2:\n";
@@ -79,13 +79,13 @@ dump($book->currentPage()); // 38
 //Challenge V
 
 
-echo "\nQuestion 5:\n";
+// echo "\nQuestion 5:\n";
 
-use App\Library\Shelf;
+// use App\Library\Shelf;
 
-$shelf = new Shelf();
-$shelf->addBook($book);
-$shelf->addBook(new Book("The Catcher in the Rye", 277));
-$shelf->addBook(new Book("Stamped from the Beginning", 582));
+// $shelf = new Shelf();
+// $shelf->addBook($book);
+// $shelf->addBook(new Book("The Catcher in the Rye", 277));
+// $shelf->addBook(new Book("Stamped from the Beginning", 582));
 
-dump($shelf->titles()); // ["Zero: The Biography of a Dangerous Idea", "The Catcher in the Rye", "Stamped from the Beginning"]
+// dump($shelf->titles()); // ["Zero: The Biography of a Dangerous Idea", "The Catcher in the Rye", "Stamped from the Beginning"]
