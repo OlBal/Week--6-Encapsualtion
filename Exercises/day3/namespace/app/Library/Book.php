@@ -39,20 +39,30 @@ class Book
 //Create a Shelf class. It should have an addBook() method which gets passed a Book. It should also have a titles() method, which lists the titles of all the books on the shelf.
 
 
-// class Shelf
-// {
+class Shelf
+{
 
-//   private $shelf = [];
+  private $shelf = [];
+  private $titles = [];
 
-//   public function addBook()
-//   {
-//     $this->shelf [] = $this->$book;
 
-//   }
+  public function __construct()
+  {
+    $this->books = $titles;
+  }
 
-//   public function titles()
-//   {
-    
-//   }
+  public function addBook($book)
+  {
+   return $this->shelf[] = $book;
+  }
 
-// }
+  public function titles()
+  {
+   
+   $this->titles[""] = array_map($this->shelf);
+  return $this->titles;
+  }
+
+}
+
+
