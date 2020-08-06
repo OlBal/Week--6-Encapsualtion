@@ -1,5 +1,5 @@
 <?php
-namespace App\Library\Book;
+namespace App\Library;
 
 
 //~~~~* Challenge IV *~~~~~\\
@@ -39,20 +39,20 @@ class Book
 //Create a Shelf class. It should have an addBook() method which gets passed a Book. It should also have a titles() method, which lists the titles of all the books on the shelf.
 
 
-class Shelf
-{
+// class Shelf
+// {
 
-  private $shelf = [];
+//   private $shelf = [];
 
-  public function addBook()
-  {
-    $this->shelf [] = $this->$book;
+//   public function addBook()
+//   {
+//     $this->shelf [] = $this->$book;
 
-  }
+//   }
 
-  public function titles()
-  {
+//   public function titles()
+//   {
     
-  }
+//   }
 
-}
+// }
