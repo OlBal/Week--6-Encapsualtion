@@ -4,19 +4,20 @@ namespace App\Counter;
 
 class BeanCounter 
 {
-    private $beans;
-    
-
-    public function addBean()
+    public function __construct (Counter $counter)
     {
-
+        $this->counter = $counter;
+    }
+   
+    public function addBean() : BeanCounter
+    {
+        $this->counter->increment();
+        return $this;
     }
 
-    public function howMany()
+    public function howMany() : float
     {
-
+        return $this->counter->count();
     }
-
-
 
 }

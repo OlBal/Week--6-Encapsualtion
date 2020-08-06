@@ -4,17 +4,15 @@ namespace App\Counter;
 
 class Counter 
 {
-    private $counter = 0;
+    private $counter;
 
-    public function increment() : float
+    public function increment() : int
     {
        return  $this->counter += 1;
     }
 
-    public function count() : float
+    public function count() : int
     {
         return $this->counter;
     }
-
-
 }
